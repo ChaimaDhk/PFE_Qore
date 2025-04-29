@@ -1,0 +1,84 @@
+
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll" style="background-image: url('assets/img/bg/tunisia2.jpg');background-size:100% 120%;"
+    data-speed="0.8">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100">
+                    <h2 class="section-heading">Sign <span class="theme-accent-color">Up</span> </h2>
+                    <hr class="thin-hr">
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-md-12 col-lg-12"></div>
+                        <form [formGroup]="registerForm"  id="contactform"
+                            class="form-group main-contact-form col-md-12 col-lg-12  wow fadeIn" data-wow-delay="0.2s">
+                            <label>First Name</label>
+                            <input type="text" formControlName="firstName" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                            </div>
+                            <br><br><br>
+
+                            <label>Last Name</label>
+                            <input type="text" formControlName="lastName" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                            </div>
+                            <br><br><br>
+                            <label>Tel</label>
+                            <input type="text" formControlName="tel" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.tel.errors }" />
+                            <div *ngIf="submitted && f.tel.errors" class="invalid-feedback">
+                                <div *ngIf="f.tel.errors.required">Email is required</div>
+                                <div *ngIf="f.tel.errors.tel">tel is required</div>
+                            </div><br><br><br>
+                            <label>Email</label>
+                            <input type="text" formControlName="email" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                            </div><br><br><br>
+
+           
+                            <label>Password</label>
+                            <input type="password" formControlName="password" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                            </div><br><br>
+                            <label>Confirm Password</label>
+                            <input type="password" formControlName="confirmPassword" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                            </div><br><br><br>
+                            <button type="button" (click)='filePicker.click()' class="comment_button trans_200" style="background-color:#222;color: rgb(252, 245, 245);">Sélectionner
+                                image</button>
+                            <div class="form-group">
+                                <input style="visibility: hidden;" type="file" class="form-control" #filePicker
+                                    (change)='onImageSelected($event)' />
+                            </div>
+                            <img [src]="imagePreview" *ngIf="imagePreview" width="200px" height="200px" >
+                            <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit"
+                                value="Sign Up"  (click)="signup(registerForm.value)"  style="margin-right: 45%;" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

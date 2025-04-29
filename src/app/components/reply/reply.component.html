@@ -1,0 +1,37 @@
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg1.jpg"
+    data-speed="0.8">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100" >
+                    <h2 class="section-heading"id="contact">Reply <span class="theme-accent-color">To</span> Messages </h2>
+                    <hr class="thin-hr">
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-md-12 col-lg-12"></div>
+                        <form    [formGroup]="replyForm" id="reply"
+                            class="form-group main-contact-form col-md-12 col-lg-12  wow fadeIn" data-wow-delay="0.2s">
+                            
+                            <input type="email" class="form-control col-md-6 col-lg-12" id="name"
+                                 formControlName="email" placeholder="{{message.email}}"  readonly/><br><br><br>
+                           
+                            <textarea type="text" class="form-control col-md-6 col-lg-12" placeholder="Reply *" 
+                                formControlName="reply" ></textarea><br><br><br>
+                           
+                            <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit"
+                                value="Send "  (click)="response(replyForm.value)"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

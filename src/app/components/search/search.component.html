@@ -1,0 +1,50 @@
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll"data-image-src="assets/img/bg/search.jpg"
+    data-speed="0.8">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100" >
+                    <h2 class="section-heading" style="margin-right :15%;"> <span class="theme-accent-color">Search</span> </h2>
+                    <hr class="thin-hr">
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-md-12 col-lg-12"></div>
+                        <form class="comment_form" [formGroup]="searchForm"  id="message"
+                            class="form-group main-contact-form col-md-12 col-lg-12  wow fadeIn" data-wow-delay="0.2s">
+                            <input type="text" class="form-control col-md-6 col-lg-12" placeholder="Search*"
+                                required formControlName="search" /><br><br><br>
+                         
+                            <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit"
+                                value="Search "    (click)="search(this.searchForm.value)"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+                      <!-- Events -->
+
+<div class="events" *ngIf="isDisplay">
+    <div class="container">
+      
+        <div class="row events_row">
+
+            <div class="col-lg-12 event_col" *ngFor="let e of events">
+                <app-event [childEvent]='e' ></app-event>
+                <!-- (click)='update($event)' -->
+            </div>
+
+          
+
+        </div>
+    </div>
+</div>
+    </div>
+</section>

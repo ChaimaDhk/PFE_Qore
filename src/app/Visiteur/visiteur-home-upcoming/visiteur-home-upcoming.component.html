@@ -1,0 +1,26 @@
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll" style="background-image: url('assets/img/shine.jpg');background-size: 100% 100%; "
+    data-speed="0.8">
+    <div class="section-inner">
+         <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100" style="margin-top: 10%;">
+                    <h2 class="section-heading" style="color: white;">Upcoming <span class="theme-accent-color">Events</span> List</h2>
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+
+         
+
+            <div class="row">
+                <div  *ngFor="let e of events1">
+
+                    <app-visiteur-event [childEvent]='e' (click)='update($event)'></app-visiteur-event>
+               </div>
+
+               
+            </div>
+        </div>
+    </div></section>

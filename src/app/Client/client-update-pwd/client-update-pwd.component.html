@@ -1,0 +1,71 @@
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll" 
+    data-speed="0.8">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100">
+                    <h2 class="section-heading">Update <span class="theme-accent-color">Password</span> </h2>
+                    <hr class="thin-hr">
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-md-12 col-lg-12"></div>
+                        <form [formGroup]="form1">
+                            <div class="form-group">
+                              <label>Old Password</label>
+                              <input
+                                formControlName="oldPwd"
+                                id="oldPwd"
+                                type="password" 
+                                class="form-control" />
+                              <div class="alert alert-danger" *ngIf="oldPwd!.touched && oldPwd!.invalid">
+                                <div *ngIf="oldPwd!.errors!.required">Old Password is required.</div>
+                                <div *ngIf="oldPwd!.errors!.shouldBe1234">Old Password is not valid.</div>
+                              </div>
+                            </div>
+                          
+                            <div class="form-group">
+                              <label>New Password</label>
+                               <input 
+                                formControlName="newPwd" 
+                                id="newPwd"
+                                type="password"  
+                                class="form-control" />
+                              <div class="alert alert-danger" *ngIf="newPwd!.touched! && newPwd!.invalid!">
+                                <div *ngIf="newPwd!.errors!.required">New Password is required.</div>
+                              </div>
+                            </div>
+                          
+                            <div class="form-group">
+                              <label>Confirm Password</label>
+                               <input 
+                                formControlName="confirmPwd" 
+                                id="confirmPwd"
+                                type="password"  
+                                class="form-control" />
+                              <div class="alert alert-danger" *ngIf="confirmPwd!.touched! && confirmPwd!.invalid">
+                                <div *ngIf="confirmPwd!.errors!.required">Confirm Password is required.</div>
+                              </div>
+                              <div class="alert alert-danger" *ngIf="confirmPwd!.valid && form1.invalid && form1.errors!.pwdsDontMatch">
+                                Passwords do not match.
+                              </div>
+                            </div>
+                          
+                            <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit"
+                            value="Update" (click)="updatePwd(form1.value)"  style="margin-right: 45%;" />
+                          
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

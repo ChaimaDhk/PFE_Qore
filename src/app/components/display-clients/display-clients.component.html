@@ -1,0 +1,55 @@
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg1.jpg"
+    data-speed="0.8">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100">
+                    <h2 class="section-heading">Display <span class="theme-accent-color">Users</span> </h2>
+                    <hr class="thin-hr">
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-md-12 col-lg-12"></div>
+                        <table class="table table-dark" id="tableau">
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last name </th>
+                                    <th>Email</th>
+                                    <th>Tel</th>
+                                    <th>Role</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let e of users"  class="category">
+                                    <td>{{e.firstName}}</td>
+                                    <td>{{e.lastName}}</td>
+                                    <td>{{e.email}}</td>
+                                    <td>{{e.tel}}</td>
+                                    <td>{{e.role}}</td>
+                                    <td>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" (click)="deleteUser(e._id)" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                          </svg>
+                                      
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

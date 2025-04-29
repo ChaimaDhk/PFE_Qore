@@ -1,0 +1,28 @@
+
+        <div class="col-md-6">
+          <!-- START widget-->
+          <div class="panel widget"  style="height: 400px;">
+             <div class="row row-table row-flush">
+                <div class="col-xs-5">
+                   <picture class="lateral-picture" style="margin-left: 10%;">
+                      <img [src]=childEvent.img  (click)=" displayEvents(childEvent._id)">
+                   </picture>
+                </div>
+                <div class="col-xs-7 align-middle p-lg" >
+                   <div class="pull-right" ><a (click)=" displayEvents(childEvent._id)" class="btn btn-primary btn-sm" style="color:white; background-color:rgb(231, 17, 17); ;">Display</a>
+                   </div>
+                   <div >
+                   <p>
+                      <span class="text-lg" style="font-size:large; font-weight: bolder; color: rgb(231, 17, 17);">${{childEvent.price}}</span></p>
+                   <p>
+                      <strong style="color: black;">{{childEvent.name}} </strong>
+                   </p>
+                   <div id="dash">
+                   <p style="color: black;">{{childEvent.description}}</p><p style="color: black;">...</p></div>
+                </div>
+               </div>
+             </div>
+          </div>
+          <!-- END widget-->
+        </div>
+   

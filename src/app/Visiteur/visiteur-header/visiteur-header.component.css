@@ -1,0 +1,11 @@
+.nav li a {
+    color:rgb(255, 255, 255);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+}
+.nav li{
+    margin-top: -30px;
+}
+.navBar{
+    background-color:#222;
+}

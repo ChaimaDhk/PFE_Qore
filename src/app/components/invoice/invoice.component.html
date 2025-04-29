@@ -1,0 +1,93 @@
+
+    
+<div class="container" style="background-color: #222;" >
+    <div class="row">
+        <div class="col-lg-12 text-center mb100">
+    <div class="invoice-box"id="invoice" style="background-color: rgb(255, 255, 255);">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="assets/img/logo.png" style="width:60%; max-width:300px;">
+                            </td>
+                            
+                            <td>
+                               
+                             {{today | date:'fullDate'}}<br>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table >
+                        <tr>
+                            <td>
+                              
+                        
+                            </td>
+                            
+                            <td>
+                               
+                              <br>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+        
+        
+            
+            <tr class="heading">
+                <td>
+                  Events
+                </td>
+                
+                <td>
+                    Price
+                </td>
+            </tr>
+            
+            <tr class="item"  *ngFor="let e of  reserved">
+                <td>
+                    {{e.Event.name}}
+                </td>
+                
+                <td>
+               {{e.total}}
+                </td>
+            </tr>
+            
+         
+           
+            <tr class="total">
+                <td></td>
+                
+                <td>
+                 Total={{totale}}
+                </td>
+            </tr>
+        </table>
+      
+    </div> 
+</div>
+</div>
+</div>
+
+    <div class="container" style="background-color: #222;">
+        <div class="row">
+            <div class="col-lg-12 text-center mb100">
+             
+                <p class="mt30"><a  class="btn btn-primary btn-white page-scroll" (click)="DownloadPDF()" style="margin-right: 10%;">Download</a></p>
+                <hr class="thin-hr">
+
+            </div>
+        </div>
+    </div>

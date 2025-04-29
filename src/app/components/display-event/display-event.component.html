@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center mb100">
+            <h2 class="section-heading" style="margin-top: 10%;"><span class="theme-accent-color">{{event.name}}</span> </h2>
+           
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        
+                   <picture class="lateral-picture">
+                      <img [src]=event.img alt="">
+                   </picture>
+          
+          <!-- END widget-->
+        </div>
+        <div class="col-md-6">
+          <!-- START widget-->
+          <div class="panel widget"  style="background-color: transparent;">
+             <div class="row row-table row-flush">
+               
+                <div class="col-xs-7 align-middle p-lg" style="color: white; font-size: 600px; font-family:Verdana, Geneva, Tahoma, sans-serif" >
+                  
+                   <p>
+                      <span class="text-lg" style="color: rgb(207, 30, 30); font-weight: bold;" >  ${{event.price}}</span></p>
+                   <p>
+                      <strong> Date: {{event.date}}</strong>
+                   </p>
+                   <p> Description: {{event.description}}</p>
+                </div>
+               
+               
+             </div>
+          </div>
+          <form class="comment_form"[formGroup]="ReserverForm" >
+            <p class="mt30"><a *ngIf="isDisplay"  (click)="AddToCart(ReserverForm.value)" class="btn btn-primary btn-white page-scroll" style="color: white;background-color: rgb(187, 26, 26); margin-left: 30%;">Add to wish list</a></p>
+            <h3><p class="mt30" style="font-family: 'Times New Roman', Times, serif;color: rgb(207, 30, 30); font-weight: bold; font-size:30px; margin-left: 30%;" *ngIf="!isDisplay">No places</p></h3>
+</form>
+          <!-- END widget-->
+        </div>
+        
+    </div>
+    </div>

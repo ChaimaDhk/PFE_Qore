@@ -1,0 +1,49 @@
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/tunisia.jpg" data-speed="0.8">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100">
+                    <h2 class="section-heading">Add <span class="theme-accent-color">Category</span> </h2>
+                    <hr class="thin-hr">
+                  
+                </div>
+            </div>
+        </div>
+        <div class="container">
+           
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-md-12"></div>
+                        <form [formGroup]="CategoryForm" id="contactform"
+                        class="form-group main-contact-form col-md-12 col-lg-12  wow fadeIn" data-wow-delay="0.2s">
+                        <label> Name</label>
+                        <input type="text" formControlName="name" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required"> Name is required</div>
+                        </div>
+                        <br><br><br>
+
+                        <label>Description</label>
+                        <textarea type="text" formControlName="description" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
+                        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                            <div *ngIf="f.description.errors.required">Description is required</div>
+                        </div>
+                        
+                    <br><br>
+
+
+                        <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit"
+                            value="Add " (click)="addCategory(CategoryForm.value)" />
+                    </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+</section>

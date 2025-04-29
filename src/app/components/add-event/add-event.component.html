@@ -1,0 +1,92 @@
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll"  data-speed="0.8">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100">
+                    <h2 class="section-heading">{{title}} <span class="theme-accent-color">Event</span> </h2>
+                    <hr class="thin-hr">
+                  
+                </div>
+            </div>
+        </div>
+        <div class="container">
+           
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-md-12"></div>
+                       
+                        <form [formGroup]="eventForm" id="contactform"
+                            class="form-group main-contact-form col-md-12 col-lg-12  wow fadeIn" data-wow-delay="0.2s">
+                            <label> Name</label>
+                            <input type="text" formControlName="name" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }" [(ngModel)]="event.name"  />
+                            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                <div *ngIf="f.name.errors.required"> Name is required</div>
+                            </div>
+                            <br><br><br>
+
+                            <label>Date</label>
+                            <input type="date" formControlName="date" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.date.errors }" [(ngModel)]="event.date" />
+                            <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                                <div *ngIf="f.date.errors.required">Date is required</div>
+                            </div>
+                            <br><br><br>
+                            
+                            <label>Place</label>
+                            <input type="text" formControlName="place" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.place.errors }" [(ngModel)]="event.place" />
+                            <div *ngIf="submitted && f.place.errors" class="invalid-feedback">
+                                <div *ngIf="f.place.errors.required">Place is required</div>
+                              
+                            </div><br><br><br>
+                            <label>Category</label>
+                            <select type="text" formControlName="category" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.category.errors }" [(ngModel)]="event.category">
+                                <option value="0"></option>
+                                <option  *ngFor="let e of category">{{e.name}}</option>
+                            </select>
+                            <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                                <div *ngIf="f.category.errors.required">Category is required</div>
+                              
+                            </div><br><br><br>
+                            <label>Description</label>
+                            <textarea type="text" formControlName="description" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.description.errors }" [(ngModel)]="event.description"></textarea>
+                            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                                <div *ngIf="f.description.errors.required">Description is required</div>
+                            </div><br><br>
+
+                            <label>Price</label>
+                            <input type="text" formControlName="price" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.price.errors }" [(ngModel)]="event.price" />
+                            <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                                <div *ngIf="f.price.errors.required">Price is required</div>
+                               
+                            </div><br><br>
+                            <label>Quantity</label>
+                            <input type="text" formControlName="Qte" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.Qte.errors }" [(ngModel)]="event.Qte"/>
+                            <div *ngIf="submitted && f.Qte.errors" class="invalid-feedback">
+                                <div *ngIf="f.Qte.errors.required">Quantity is required</div>
+                               
+                            </div><br><br>
+                            <button type="button" (click)='filePicker.click()' class="comment_button trans_200" style="background-color:#222;color: rgb(252, 245, 245);">Sélectionner
+                                image</button>
+                            <div class="form-group">
+                                <input style="visibility: hidden;" type="file" class="form-control" #filePicker
+                                    (change)='onImageSelected($event)' />
+                            </div>
+                            <img [src]="imagePreview" *ngIf="imagePreview" width="200px" height="200px" >
+                          
+                            <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit"
+                                value="{{title}}  " (click)="addOrEditEvent(eventForm.value)" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

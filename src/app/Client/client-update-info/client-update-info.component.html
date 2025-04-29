@@ -1,0 +1,65 @@
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll" 
+    data-speed="0.8">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb100">
+                    <h2 class="section-heading">Update <span class="theme-accent-color">informations</span> </h2>
+                    <p class="mt30"><a (click)="updatePass()" class="btn btn-primary btn-white page-scroll">Update Password</a></p>
+                    <hr class="thin-hr">
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-md-12 col-lg-12"></div>
+                        <form [formGroup]="editForm"  id="contactform"
+                        class="form-group main-contact-form col-md-12 col-lg-12  wow fadeIn" data-wow-delay="0.2s">
+                        <label>First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" [(ngModel)]="user.firstName"/>
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                        </div>
+                        <br><br><br>
+
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"[(ngModel)]="user.lastName" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                        <br><br><br>
+
+                        <label>Tel</label>
+                            <input type="text" formControlName="tel" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.tel.errors }" [(ngModel)]="user.tel"/>
+                            <div *ngIf="submitted && f.tel.errors" class="invalid-feedback">
+                                <div *ngIf="f.tel.errors.required">tel is required</div>
+                                <div *ngIf="f.tel.errors.tel">tel is required</div>
+                            </div><br><br><br>
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" readonly
+                            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" [(ngModel)]="user.email"/>
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div><br><br><br>
+
+       
+                    
+                        <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit"
+                            value="Update"  (click)="update(editForm.value)"  style="margin-right: 45%;" />
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
